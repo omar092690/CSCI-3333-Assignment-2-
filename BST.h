@@ -2,7 +2,7 @@
 // CSCI 3333 Spring 2026
 // Instructor: Dr. Andres Figueroa
 // Programming Assignment 2: Movies Dataset using BST
-// Student Name and SID#:
+// Student Name and SID#: Omar de la Rosa, 20660995
 // 
 //***********************************************************************************
 
@@ -71,8 +71,22 @@ BinarySearchTree::BinarySearchTree(){
 void BinarySearchTree::longestPath(Node* currentNode = NULL) {
     if(currentNode == NULL){
             currentNode = (*this).root;
+			cout <<"The longest path is: ";
     }
-    //COMPLETE THIS FUNCITON WITH YOUR CODE HERE
+	if (currentNode == NULL){
+		return;
+	}
+	cout<<currentNode->movieTitle;
+	
+	if(currentNode->left == NULL && currentNode->right == NULL){
+		return;
+	}
+	cout<<" ->";
+
+	if(currentNode->leftHeight >= currentNode->rightHeight)
+		longestPath(currentNode->left);
+	else
+		longestPath(currentNode->right);
 
 }
 
