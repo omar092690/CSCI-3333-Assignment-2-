@@ -66,8 +66,9 @@ BinarySearchTree::BinarySearchTree(){
 	numberNodes = 0;
 	root = NULL;
 }
-
-//Describe a running time analysis of your method in here
+// The running time of this method is Theta(h), where h is the height of the BST.
+// This is because the function follows a single path from the root to a leaf,
+// visiting one node per level without exploring the entire tree.
 void BinarySearchTree::longestPath(Node* currentNode = NULL) {
     if(currentNode == NULL){
             currentNode = (*this).root;
